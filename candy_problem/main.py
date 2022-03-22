@@ -64,7 +64,11 @@ def create_new_candy_data_structure(data):
 
 #3
 def get_friends_who_like_specific_candy(data, candy_name):
-    pass
+    candy_dict = create_new_candy_data_structure(data)
+
+    friends = candy_dict[candy_name]
+
+    return tuple(friends)
 
 #4
 def create_candy_set(data):
