@@ -50,7 +50,17 @@ def get_friends_favorite_candy_count(favorites):
 
 #2
 def create_new_candy_data_structure(data):
-    pass 
+    candy_dict = {}
+
+    for friend in data:
+        for candy in friend[1]:
+            if candy not in candy_dict:
+                candy_dict[candy] = [friend[0]]
+            else:
+                candy_dict[candy].append(friend[0])
+    
+    return candy_dict
+
 
 #3
 def get_friends_who_like_specific_candy(data, candy_name):
