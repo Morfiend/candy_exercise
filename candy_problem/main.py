@@ -36,7 +36,17 @@ write tests to handle edge cases.
 
 #1
 def get_friends_favorite_candy_count(favorites):
-    pass
+    candy_dict = {}
+
+    for friend in favorites:
+        for candy in friend[1]:
+            if candy not in candy_dict:
+                candy_dict[candy] = 1
+            else:
+                candy_dict[candy] += 1
+
+    return candy_dict
+
 
 #2
 def create_new_candy_data_structure(data):
